@@ -35,6 +35,7 @@ header{
 		margin: 0;
 		font-family: $logo;
 		color: $orange-4;
+		padding-left: 1em;
 		.svg{
 			@include transition(all 0.25s linear);
 			width: auto;
@@ -181,10 +182,14 @@ section{
 			position: relative;
 			color: $gray-6;
 			form{
-				min-height: 20rem;
+				
 				background-color: $orange-2;
 				@include box-shadow($gray-0 2px 2px 4px);
 				padding: 2%;
+				@media (min-width: 768px){
+					min-height: 20rem;
+
+				}
 				input{
 					float: left;
 					height: 3em;
@@ -276,11 +281,19 @@ section{
 			}
 			.list-container{
 				background-color: $orange-4;
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				right: 0;
 				color: $white;
+				position: relative;
+				padding: 1em;
+				margin-top: 1em;
+				@media (min-width: 768px){
+					margin: 0;
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					right: 1em;
+					padding: 0;
+
+				}
 				h3{
 					height: 2.2em;
 					line-height: 2.2em;
@@ -289,13 +302,15 @@ section{
 					padding-left: 1em;
 				}
 				ul{
-					position: absolute;
 					z-index: 1;
 					overflow: auto;
-					top: 4em;
-					bottom: 5em;
-					left: 1em;
-					right: 1em;
+					@media (min-width: 768px){
+						position: absolute;
+						top: 4em;
+						bottom: 5em;
+						left: 1em;
+						right: 1em;
+					}
 					li{
 						margin: 0.5em;
 						position: relative;
@@ -332,15 +347,20 @@ section{
 							background-color: $orange-2;
 							color: $white;
 							text-decoration: none;
-							.fa{
-							}
+
 						}
 					}
 				}
 				.button.ghost{
-					position: absolute;
-					bottom: 1em;
-					right: 1em;
+					width: 100%;
+					margin-top: 1em;
+
+					@media (min-width: 768px){
+						position: absolute;
+						bottom: 1em;
+						right: 1em;
+						width: auto;
+					}	
 
 					&:hover{
 						color: $orange-4;
@@ -402,6 +422,7 @@ section{
 				border-style: solid;
 				border-color: $light-blue-1;
 				padding: 1em;
+				min-height: 7em;
 			}
 			&:hover{
 				span.fa{
