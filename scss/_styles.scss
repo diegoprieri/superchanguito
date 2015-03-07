@@ -1,0 +1,404 @@
+@import "compass";
+@import "variables.scss";
+@import "mixins.scss";
+html,body{
+	height: 100%;
+}
+body{
+	font-family: $sans-serif;
+	font-size: 16px;
+	color:$light-blue-1;
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAK0lEQVQYV2NkIBIwEqmOgQ4Kb777+B/kHHUhfhTbMKwmWiEuz9HBM7isBgB+MwgLwz1iFQAAAABJRU5ErkJggg==) repeat;
+	padding-top: 5em;
+}
+
+*{
+	@include box-sizing(border-box);
+}
+.wrapper{
+	width: 100%;
+	max-width: 75em;
+	margin: 0 auto;
+}
+header{
+	background-color: $white;
+	height: 5.2em;
+	line-height: 5.2em;
+	@include box-shadow();
+	@include transition(all 0.25s linear);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	h1.logo{
+		margin: 0;
+		font-family: $logo;
+		color: $orange-4;
+		.svg{
+			@include transition(all 0.25s linear);
+			width: auto;
+			height: 2em;
+			color: $orange-4;
+			fill: currentColor;
+			*{
+				@include transition(all 0.25s linear);
+
+			}
+		}
+	}
+	nav{
+		&.social{
+			float: right;
+			ul{
+				text-align: right;
+				font-size: 2em;
+				li{
+					text-align: center;
+					display: inline;
+					padding: 0 0.5em;
+					a{
+						color: $orange-4;
+						span{
+
+						}
+					}
+				}
+			}
+			
+		}
+	}
+	&.collapsed{
+		height: 3.5em;
+		line-height: 3.5em;
+		border-bottom: 2px solid $orange-1;
+		h1.logo{
+			.svg{
+				height: 1.3em;
+				//g:first-of-type{
+				//	display: none;
+				//}
+				.hide{
+					@include transition(all 0.25s linear);
+					@include transform(translate(0, -300px));
+				}
+				.grow{
+					@include transition(all 0.25s linear);
+					@include transform(scale(1.4) translate(0, -50px));
+
+				}
+				.short{
+					@include transition(all 0.25s linear);
+					@include transform(scale(0.8, 1));
+
+				}
+				.move{
+					@include transition(all 0.25s linear);
+					@include transform(translate(-90px, 0));
+
+				}
+			}
+		}
+
+	}
+}
+h1, h2, h3, h4, h5, h6{
+	margin: 0.5em 0;
+}
+h1{
+	font-size: 2.5em;
+}
+h2{
+	font-size: 2em;
+}
+h3{
+	font-size: 1.85em;
+}
+h4{
+	font-size: 1.5em;
+}
+h5{
+	font-size: 1em;
+}
+h6{
+	font-size: 0.85em;
+}
+section{
+	padding: 2em 0;
+	color: $gray-3;
+	article{
+		h2{
+			text-align: center;
+		}
+		p{
+			font-size: 1.2em;
+			margin-bottom: 1.5em;
+			line-height: 1.2;
+		}
+	}
+	&.main{
+		article{
+
+			.title-container{
+				@include box-shadow($gray-0 2px 2px 4px);
+				@include clearfix();
+				margin-bottom: 1em;
+				background-color: $orange-4;
+
+				.list-icon{
+					height: 15rem;
+					padding: 1em;
+					background-color: $orange-3;
+					text-align: center;
+					.svg{
+						height: 100%;
+						color: $white;
+						fill: currentColor;
+					}
+					
+				}
+
+				.title{
+					height: 15rem;
+					padding: 1em;
+					
+					h2{
+						font-size: 2.2em;
+						color: $white;
+						margin: 0 0 0.5em;
+					}
+					p{
+						font-size: 1rem;
+						color: $white;
+
+					}
+				}
+			}
+		}
+	}
+	&.list{
+		.search{
+			color: $gray-6;
+			form{
+				height: 20rem;
+				background-color: $orange-3;
+				@include box-shadow($gray-0 2px 2px 4px);
+				padding: 2em;
+				input{
+					float: left;
+					height: 3em;
+					line-height: 3em;
+					padding: 0 1em;
+					border: 0;
+					outline: 0;
+					margin: 0.5em;
+					@include border-radius(5px);
+					@include box-shadow(none);
+					border:1px solid $orange-4;
+					&[type="text"]{
+						width: calc(60% - 40px);
+						margin-right: 0;
+						border-right: 0;
+						@include border-radius(5px 0 0 5px);
+					}
+					&.number{
+						border-left:0;
+						@include border-radius(0);
+						width: 40px;
+						padding: 0;
+						margin-left: 0;
+						text-align: center;
+					}
+					&[type="submit"]{
+						width: 20%;
+						text-align: center;
+						color: $orange-4;
+						border:1px solid $orange-4;
+						background-color: $white;
+						cursor: pointer;
+						@include transition(all 0.25s linear);
+						&:hover{
+							background-color: $orange-4;
+							color: $white;
+
+						}
+					}
+					&[type="checkbox"]{
+						display: none;
+					}
+
+				}	
+				button{
+					float: left;
+					height: 3em;
+					line-height: 3em;
+					padding: 0 1em;
+					border: 0;
+					outline: 0;
+					margin: 0.5em 0;
+					background-color: $white;
+					@include box-shadow(none);
+					border:1px solid $orange-4;
+					cursor: pointer;
+					color: $orange-4;
+					@include transition(all 0.25s linear);
+					&:hover{
+						background-color: $orange-4;
+						color: $white;
+					}
+					&.add{
+						@include border-radius(0 5px 5px 0);
+					}
+					&.disabled{
+						cursor: not-allowed;
+						background-color: $gray-9;
+						color: $gray-4;
+						&:hover{
+							background-color: $gray-9;
+							color: $gray-4;
+							cursor: not-allowed;
+
+						}
+					}
+				}		
+				label{
+					float: left;
+					display: block;
+					margin: 0.5em;
+					padding: 0.5em;
+					@include border-radius(3px);
+					color: $orange-4;
+					border:1px solid $orange-4;
+					cursor: pointer;
+					background-color: $white;
+				}
+			}
+			.list-container{
+				background-color: $orange-4;
+				padding: 1em;
+				position: relative;
+				color: $white;
+				height: 36rem;
+				overflow: auto;
+				ul{
+					position: relative;
+					z-index: 1;
+					li{
+						margin: 0.5em;
+						position: relative;
+						line-height: 1.5;
+						display: block;
+						margin: 0.5em;
+						padding: 0.5em 3em 0.5em 0.5em;
+						@include border-radius(3px);
+						color: $orange-4;
+						border:1px solid $orange-4;
+						background-color: $white;
+						@include clearfix();
+						span{
+							display: block;
+							&.product-name, &.name{
+								float: left;
+							}
+							&.product-number, &.cant{
+								float: right;
+							}
+						}
+						a{
+							position: absolute;
+							@include border-radius(0 3px 3px 0);
+							right: 0;
+							display: block;
+							padding: 0.75em;
+							top: 0;
+							background-color: $orange-3;
+							color: $white;
+							text-decoration: none;
+							.fa{
+							}
+						}
+					}
+				}
+				svg{
+					display: none;
+					position: absolute;
+					bottom: 0;
+					color: $blue-2;
+					fill: currentColor;
+					left: 0;
+					opacity: 0.5;
+				}
+			}
+		}
+		
+	}
+	&.description{
+		background-color: $white;
+		h2{
+			text-align: center;
+			position: relative;
+			span{
+				background-color: $white;
+				position: relative;
+				z-index: 1;
+				padding: 0 20px;
+
+			}
+			/*&:before{
+				display: block;
+				position: absolute;
+				top: 50%;
+				content: "";
+				border-bottom: 5px solid $light-blue-1;
+				width: 100%;
+			}*/
+		}
+		article{
+			text-align: center;
+			h3{
+				position: relative;
+				span{
+					background-color: $white;
+					position: relative;
+					z-index: 1;
+					padding: 0 10px;
+				}
+				&:before{
+					display: block;
+					position: absolute;
+					top: 50%;
+					content: "";
+					border-bottom: 5px solid $light-blue-1;
+					width: 100%;
+				}
+			}
+			span.fa{
+				font-size: 2.5rem;
+				width: 4rem;
+				height: 4rem;
+				line-height: 4rem;
+				margin: 0 auto;
+				text-align: center;
+				// needs latest Compass, add '@import "compass"' to your scss
+				background-color: #ff8115; // Old browsers
+				@include transition(all 0.25s linear);
+				@include filter-gradient(#ff8115, #FF6A00, horizontal); // IE6-9 fallback on horizontal gradient
+				@include background-image(linear-gradient(left top,  #ff8115 0%,#ff8115 50%,#FF6A00 51%,#FF6A00 100%));
+				color: $white;
+				@include border-radius(2rem);
+			}
+			p{
+				border-width:0 5px  5px;
+				border-style: solid;
+				border-color: $light-blue-1;
+				padding: 1em;
+			}
+			&:hover{
+				span.fa{
+				@include border-radius(0);
+				}
+			}
+		}
+		
+	}
+}

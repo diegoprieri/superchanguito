@@ -1,0 +1,17 @@
+@mixin colWidth($cols){
+	$width:percentage((1/12)*$cols);
+	width: $width - 2;
+	&.noMargin{
+		width: $width;
+	}
+}
+@mixin push($cols){
+	$left:percentage((1/12)*$cols);
+	position: relative;
+	left: $left;
+}
+@mixin pull($cols){
+	$right:percentage((1/12)*$cols);
+	position: relative;
+	right: $right;
+}
