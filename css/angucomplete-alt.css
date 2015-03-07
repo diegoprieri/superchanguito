@@ -7,7 +7,7 @@
     border-width: 1px;
     border-style: solid;
     border-radius: 2px;
-    width: 250px;
+    width: 100%;
     padding: 6px;
     cursor: pointer;
     z-index: 9999;
@@ -21,23 +21,25 @@
 
 .angucomplete-searching {
     color: #acacac;
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 16px;
 }
 
 .angucomplete-description {
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 16px;
+    color: #666666;
 }
 
 .angucomplete-row {
     padding: 5px;
-    color: #000000;
+    color: #0F9BC4;
     margin-bottom: 4px;
     clear: both;
 }
 
 .angucomplete-selected-row {
-    background-color: lightblue;
-    color: #ffffff;
+    background-color: #D9EEF1;
 }
 
 .angucomplete-image-holder {

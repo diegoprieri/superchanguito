@@ -190,6 +190,19 @@ section{
 					min-height: 20rem;
 
 				}
+				.ng-isolate-scope{
+					width: calc(60% - 40px);
+					background-color: red;
+					.angucomplete-dropdown{
+						margin-top: 39px;
+						margin-left: 6px;
+						@include border-radius(0 0 5px 5px);
+						border-width: 0 1px 1px 1px;
+						border-style: solid; 
+						border-color: $orange-4;
+						width: calc(100% - -1px);
+					}
+				}
 				input{
 					float: left;
 					height: 3em;
@@ -202,7 +215,7 @@ section{
 					@include box-shadow(none);
 					border:1px solid $orange-4;
 					&[type="text"]{
-						width: calc(60% - 40px);
+						width: 100%;
 						margin-right: 0;
 						border-right: 0;
 						@include border-radius(5px 0 0 5px);
