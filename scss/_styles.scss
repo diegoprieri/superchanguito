@@ -38,7 +38,8 @@ header{
 		.svg{
 			@include transition(all 0.25s linear);
 			width: auto;
-			height: 2em;
+			height: 1.5em;
+			margin-top: 0.2em;
 			color: $orange-4;
 			fill: currentColor;
 			*{
@@ -58,10 +59,17 @@ header{
 					display: inline;
 					padding: 0 0.5em;
 					a{
-						color: $orange-4;
-						span{
-
+						text-decoration: none;
+						&:hover{
+							text-decoration: none;
+							color: $white
 						}
+						&.fa-facebook-square{
+							color: $fb-color;
+						}						
+						&.fa-twitter-square{
+							color: $tw-color;
+						}						
 					}
 				}
 			}
@@ -74,29 +82,11 @@ header{
 		border-bottom: 2px solid $orange-1;
 		h1.logo{
 			.svg{
-				height: 1.3em;
+				height: 1em;
 				//g:first-of-type{
 				//	display: none;
 				//}
-				.hide{
-					@include transition(all 0.25s linear);
-					@include transform(translate(0, -300px));
-				}
-				.grow{
-					@include transition(all 0.25s linear);
-					@include transform(scale(1.4) translate(0, -50px));
-
-				}
-				.short{
-					@include transition(all 0.25s linear);
-					@include transform(scale(0.8, 1));
-
-				}
-				.move{
-					@include transition(all 0.25s linear);
-					@include transform(translate(-90px, 0));
-
-				}
+				
 			}
 		}
 
@@ -146,7 +136,7 @@ section{
 				background-color: $orange-4;
 
 				.list-icon{
-					height: 15rem;
+					height: 10rem;
 					padding: 1em;
 					background-color: $orange-3;
 					text-align: center;
@@ -159,7 +149,7 @@ section{
 				}
 
 				.title{
-					height: 15rem;
+					height: 10rem;
 					padding: 1em;
 					
 					h2{
@@ -180,7 +170,7 @@ section{
 		.search{
 			color: $gray-6;
 			form{
-				height: 20rem;
+				height: 25rem;
 				background-color: $orange-3;
 				@include box-shadow($gray-0 2px 2px 4px);
 				padding: 2em;
@@ -275,14 +265,22 @@ section{
 			}
 			.list-container{
 				background-color: $orange-4;
-				padding: 1em;
 				position: relative;
 				color: $white;
-				height: 36rem;
-				overflow: auto;
+				height: 36em;
+				h3{
+					height: 2.2em;
+					line-height: 2.2em;
+					background-color: $orange-4;
+					margin: 0;
+					padding-left: 1em;
+				}
 				ul{
+					padding: 0 1em;
 					position: relative;
 					z-index: 1;
+					overflow: auto;
+					height: 25rem;
 					li{
 						margin: 0.5em;
 						position: relative;
@@ -319,14 +317,14 @@ section{
 						}
 					}
 				}
-				svg{
-					display: none;
-					position: absolute;
-					bottom: 0;
-					color: $blue-2;
-					fill: currentColor;
-					left: 0;
-					opacity: 0.5;
+				.button.ghost{
+					margin-top: 2em;
+					margin-right: 2em;
+					float: right;
+
+					&:hover{
+						color: $orange-4;
+					}
 				}
 			}
 		}
@@ -344,14 +342,6 @@ section{
 				padding: 0 20px;
 
 			}
-			/*&:before{
-				display: block;
-				position: absolute;
-				top: 50%;
-				content: "";
-				border-bottom: 5px solid $light-blue-1;
-				width: 100%;
-			}*/
 		}
 		article{
 			text-align: center;
