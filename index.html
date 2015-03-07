@@ -19,6 +19,11 @@
 			margin-top: 37px;
 			margin-left: 10px;
 		}
+
+		section.list .search .list-container ul li{
+			margin-bottom: -9px;
+  			border-radius: 0px;
+		}
 	</style>	
 </head>
 <body ng-controller="mainController">
@@ -50,21 +55,11 @@
 				</div>
 				<form action="" class="col s12 noMargin">
 					<fieldset>
-						<!--
-						<div angucomplete-alt placeholder="Ingrese su producto" pause="100" selected-object="countrySelected" local-data="countries" search-fields="name" title-field="name" minlength="1" input-class="" match-class="highlight" type="text"></div>
-						-->
-
+						
 						<div angucomplete-alt placeholder="Ingrese su producto" pause="100" selected-object="countrySelected"	remote-url="https://api.github.com/search/repositories" 
 						   remote-url-request-formatter="remoteUrlRequestFn" 
 						   remote-url-data-field="items" 
 						   search-fields="name,description" title-field="name" description-field="description" minlength="1" input-class="" match-class="highlight" type="text"></div>
-						
-						<!--
-						
-						 <div angucomplete-alt id="ex5" placeholder="Search projects" pause="500" selected-object="selectedProject" remote-url="https://api.github.com/search/repositories" remote-url-request-formatter="remoteUrlRequestFn" remote-url-data-field="items" search-fields="name,description" title-field="name" description-field="description" minlength="2" input-class="form-control form-control-small" match-class="highlight">
-      					 </div>
-		
-						-->
 
 						
 						<button class="deduct disabled">-</button>
