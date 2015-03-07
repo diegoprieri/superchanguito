@@ -1,16 +1,27 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-app="scApp">
 <head>
 	<meta charset="UTF-8">
 	<title>Superchanguito</title>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/pkg.css">
+	<link rel="stylesheet" href="css/angucomplete-alt.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	
+	<link rel="stylesheet" href="css/font-awesome.min.css">	
+
+	<style>
+		header {
+			z-index: 10000;
+		}
+
+		.search .angucomplete-dropdown{
+			margin-top: 37px;
+			margin-left: 10px;
+		}
+	</style>	
 </head>
-<body>
+<body ng-controller="mainController">
 	<header aria-role="banner">
 		<div class="wrapper row">
 			<h1 class="col s3 logo">
@@ -34,12 +45,26 @@
 					</article>
 					<article class="col s12 m10 ml-m2 noMargin title">
 						<h2>&iexcl;Cargá tu lista, compar&aacute; y ahorrá!</h2>
-						<p class="col s12">No pierdas tiempo buscando el precio más bajo. Cargá tu lista de compras y descubrí qué supermercado online tiene el mejor precio. Empezá a ahorrar yá!</p>
+						<p class="col s12">No pierdas tiempo buscando el precio más bajo. Cargá tu lista de compras y descubrí qué supermercado online tiene el mejor precio. Empezá a ahorrar yá!{{message}}</p>
 					</article>
 				</div>
 				<form action="" class="col s12 noMargin">
 					<fieldset>
-						<input type="text" name="product-search" placeholder="Ingrese su producto" required>
+						<!--
+						<div angucomplete-alt placeholder="Ingrese su producto" pause="100" selected-object="countrySelected" local-data="countries" search-fields="name" title-field="name" minlength="1" input-class="" match-class="highlight" type="text"></div>
+						-->
+
+						<div angucomplete-alt placeholder="Ingrese su producto" pause="100" selected-object="countrySelected"	remote-url="https://api.github.com/search/repositories" 
+						   remote-url-request-formatter="remoteUrlRequestFn" 
+						   remote-url-data-field="items" 
+						   search-fields="name,description" title-field="name" description-field="description" minlength="1" input-class="" match-class="highlight" type="text"></div>
+						
+						<!--
+						
+						 <div angucomplete-alt id="ex5" placeholder="Search projects" pause="500" selected-object="selectedProject" remote-url="https://api.github.com/search/repositories" remote-url-request-formatter="remoteUrlRequestFn" remote-url-data-field="items" search-fields="name,description" title-field="name" description-field="description" minlength="2" input-class="form-control form-control-small" match-class="highlight">
+      					 </div>
+		
+						-->
 
 						
 						<button class="deduct disabled">-</button>
@@ -115,6 +140,9 @@
 	<!-- jQuery -->	
 	<script src="js/libs/jquery-1.11.2.min.js"></script>
 	<script src="js/libs/angular.min.js"></script>
-	<script src="js/scripts.js"></script>
+	<script src="js/scripts.js"></script>	
+	<script src="js/angular/app.js"></script>
+	<script src="js/angular/directives/ngAutocomplete.js"></script>
+	<script src="js/angular/controllers/mainController.js"></script>
 </body>
 </html>
