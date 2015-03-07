@@ -192,7 +192,7 @@ section{
 				}
 				.ng-isolate-scope{
 					width: calc(60% - 40px);
-					background-color: red;
+					float: left;
 					.angucomplete-dropdown{
 						margin-top: 39px;
 						margin-left: 6px;
@@ -291,6 +291,13 @@ section{
 					cursor: pointer;
 					background-color: $white;
 				}
+				h4{
+				   	color: #f06e30;
+				    float: left;
+				    margin: 0.5em 0.3em;
+				    width: 100%;
+
+				}
 			}
 			.list-container{
 				background-color: $orange-4;
@@ -308,54 +315,72 @@ section{
 
 				}
 				h3{
-					height: 2.2em;
-					line-height: 2.2em;
+					height: 1.8em;
+					line-height: 1.8em;
 					background-color: $orange-4;
 					margin: 0;
-					padding-left: 1em;
+					padding-left: 1rem;
+				}
+				h4{
+					margin: 0 1em;
+					padding-left: 1rem;
+					line-height: 2;
+					padding: 0 3em 0 0.5em;
+					color: $orange-4;
+					background-color: $white;
+					@include clearfix();
+					font-size: 1rem;
+					span{
+							display: block;
+							&.product-name{
+								float: left;
+							}
+							&.product-number{
+								float: right;
+								padding-left: 1em
+							}
+
+						}
 				}
 				ul{
 					z-index: 1;
 					overflow: auto;
 					@media (min-width: 768px){
 						position: absolute;
-						top: 4em;
+						top: 5.4em;
 						bottom: 5em;
 						left: 1em;
 						right: 1em;
 					}
 					li{
-						margin: 0.5em;
+						margin-bottom: 1px;
 						position: relative;
-						line-height: 1.5;
-						display: block;
-						margin: 0.5em;
-						padding: 0.5em 3em 0.5em 0.5em;
-						@include border-radius(3px);
+						line-height: 2;
+						padding: 0 3em 0 0.5em;
 						color: $orange-4;
-						border:1px solid $orange-4;
 						background-color: $white;
 						@include clearfix();
 						span{
 							display: block;
-							&.product-name, &.name{
+							&.name{
 								float: left;
 								width: calc(100% - 2em);
 								@include ellipsis-inline;
 
 							}
-							&.product-number, &.cant{
+							&.cant{
 								float: right;
 								width: 2em;
 								text-align: center;
 							}
+
 						}
 						a{
 							position: absolute;
 							@include border-radius(0 3px 3px 0);
 							right: 0;
 							display: block;
-							padding: 0.75em;
+							padding: 0.5em;
 							top: 0;
 							background-color: $orange-2;
 							color: $white;
