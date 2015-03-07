@@ -15,3 +15,9 @@
 	position: relative;
 	right: $right;
 }
+@mixin ellipsis-inline{
+  display:block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

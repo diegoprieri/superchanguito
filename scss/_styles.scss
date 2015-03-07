@@ -17,7 +17,7 @@ body{
 }
 .wrapper{
 	width: 100%;
-	max-width: 75em;
+	max-width: 93.75em;
 	margin: 0 auto;
 }
 header{
@@ -134,34 +134,43 @@ section{
 				@include clearfix();
 				margin-bottom: 1em;
 				background-color: $orange-4;
+				position: relative;
 
 				.list-icon{
-					height: 8rem;
-					padding: 1.8em 3em;
-					background-color: $orange-3;
+					padding: 1.5em;
+					background-color: $orange-2;
 					text-align: center;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
 					.svg{
-						width: 100%;
+						width: 50%;
 						height: auto;
 						color: $white;
 						fill: currentColor;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						@include translate(-50%, -50%);
 					}
 					
 				}
 
 				.title{
-					height: 8rem;
+					height: 100%;
 					padding: 1em;
 					
 					h2{
-						font-size: 2.2em;
+						font-size: 1.8em;
 						color: $white;
 						margin: 0 0 0.5em;
 					}
 					p{
 						font-size: 1rem;
 						color: $white;
-
+						margin-bottom: 0;
 					}
 				}
 			}
@@ -169,12 +178,13 @@ section{
 	}
 	&.list{
 		.search{
+			position: relative;
 			color: $gray-6;
 			form{
-				height: 27rem;
-				background-color: $orange-3;
+				min-height: 20rem;
+				background-color: $orange-2;
 				@include box-shadow($gray-0 2px 2px 4px);
-				padding: 2em;
+				padding: 2%;
 				input{
 					float: left;
 					height: 3em;
@@ -266,9 +276,11 @@ section{
 			}
 			.list-container{
 				background-color: $orange-4;
-				position: relative;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
 				color: $white;
-				height: 36em;
 				h3{
 					height: 2.2em;
 					line-height: 2.2em;
@@ -277,11 +289,13 @@ section{
 					padding-left: 1em;
 				}
 				ul{
-					padding: 0 1em;
-					position: relative;
+					position: absolute;
 					z-index: 1;
 					overflow: auto;
-					height: 25rem;
+					top: 4em;
+					bottom: 5em;
+					left: 1em;
+					right: 1em;
 					li{
 						margin: 0.5em;
 						position: relative;
@@ -298,9 +312,14 @@ section{
 							display: block;
 							&.product-name, &.name{
 								float: left;
+								width: calc(100% - 2em);
+								@include ellipsis-inline;
+
 							}
 							&.product-number, &.cant{
 								float: right;
+								width: 2em;
+								text-align: center;
 							}
 						}
 						a{
@@ -310,7 +329,7 @@ section{
 							display: block;
 							padding: 0.75em;
 							top: 0;
-							background-color: $orange-3;
+							background-color: $orange-2;
 							color: $white;
 							text-decoration: none;
 							.fa{
@@ -319,9 +338,9 @@ section{
 					}
 				}
 				.button.ghost{
-					margin-top: 2em;
-					margin-right: 2em;
-					float: right;
+					position: absolute;
+					bottom: 1em;
+					right: 1em;
 
 					&:hover{
 						color: $orange-4;
