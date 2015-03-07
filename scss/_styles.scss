@@ -275,14 +275,22 @@ section{
 			}
 			.list-container{
 				background-color: $orange-4;
-				padding: 1em;
 				position: relative;
 				color: $white;
-				height: 36rem;
-				overflow: auto;
+				height: 36em;
+				h3{
+					height: 2.2em;
+					line-height: 2.2em;
+					background-color: $orange-4;
+					margin: 0;
+					padding-left: 1em;
+				}
 				ul{
+					padding: 0 1em;
 					position: relative;
 					z-index: 1;
+					overflow: auto;
+					height: 25rem;
 					li{
 						margin: 0.5em;
 						position: relative;
@@ -319,14 +327,14 @@ section{
 						}
 					}
 				}
-				svg{
-					display: none;
-					position: absolute;
-					bottom: 0;
-					color: $blue-2;
-					fill: currentColor;
-					left: 0;
-					opacity: 0.5;
+				.button.ghost{
+					margin-top: 2em;
+					margin-right: 2em;
+					float: right;
+
+					&:hover{
+						color: $orange-4;
+					}
 				}
 			}
 		}
@@ -344,14 +352,6 @@ section{
 				padding: 0 20px;
 
 			}
-			/*&:before{
-				display: block;
-				position: absolute;
-				top: 50%;
-				content: "";
-				border-bottom: 5px solid $light-blue-1;
-				width: 100%;
-			}*/
 		}
 		article{
 			text-align: center;

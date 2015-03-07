@@ -65,4 +65,13 @@
 		font-size: 0.6875rem;
 		letter-spacing: 0;
 	}
+	&.ghost{
+		@include box-shadow(none);
+		background-color: transparent;
+		border:1px solid $white;
+		color: $white;
+		&:hover{
+			background-color: $white;
+		}
+	}
 }
