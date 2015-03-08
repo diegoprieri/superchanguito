@@ -1,4 +1,4 @@
-scApp.controller('mainController', function($scope) {
+scApp.controller('mainController', function($scope, $timeout) {
 
 	$scope.remoteUrlRequestFn = function(str) {
       return {q: str};
@@ -124,5 +124,12 @@ scApp.controller('mainController', function($scope) {
       {name: 'Zambia', code: 'ZM'},
       {name: 'Zimbabwe', code: 'ZW'}
     ];
+
+
+      $timeout(function(){
+            $(".find-icon").after("<span class='fa fa-search'></span>");            
+      });
+
+    
 
 });
