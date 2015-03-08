@@ -15,7 +15,35 @@
 			z-index: 10000;
 		}
 
-		section.list .search form .ng-isolate-scope{
+		section.main article .title-container .title h2 {
+		  font-size: 1.7em;
+		}
+
+		section.main article .title-container .title {
+		  padding: 0.7em;
+		}
+
+		section.list .search form h4{
+			float: none;
+		}
+
+		section.list .search form h5 {
+		    color: #f06e30;
+			  margin: 0.5em 0.3em;
+			  width: 100%;
+			  margin-top: 15px;
+			  display: inline-block;
+		}
+
+		section.list .search .list-container h4 {
+		  padding: 0 2em 0 0.5em;
+		  color: #fff;
+		  background-color: #D05A22;
+		  border: 1px solid #D05A22;
+		}
+
+		/* NO HAY QUE USAR LAS CLASES DE ANGULAR, SON LAS QUE EMPIEZAN EN NG- */
+		section.list .search form .ng-isolate-scope{ 
 			width: calc(100% - 40px);
   			float: none;
 		}
@@ -73,19 +101,21 @@
 						<img src="img/icon-list.svg" class="svg" alt="Lista de compras">
 					</article>
 					<article class="col s12 m10 ml-m2 noMargin title">
-						<h2>&iexcl;Cargá tu changuito, compar&aacute; y ahorrá!</h2>
-						<p class="col s12">No pierdas tiempo buscando el precio más bajo. Cargá tu lista de compras y descubrí qué supermercado online tiene el mejor precio. Empezá a ahorrar yá!{{message}}</p>
+						<h2>&iexcl;Llená tu changuito, compar&aacute; y ahorrá!</h2>
+						<p class="col s12">No pierdas tiempo buscando el precio más bajo. Llená tu changuito y descubrí qué supermercado online tiene el mejor precio. Empezá a ahorrar yá!</p>
 					</article>
 				</div>
 				<form action="" class="col s12 noMargin">
 					<fieldset>
+
+						<h4>Agregar producto</h4>
 						
 						<div angucomplete-alt placeholder="Qué producto buscás?" pause="100" selected-object="countrySelected"	remote-url="https://api.github.com/search/repositories" 
 						   remote-url-request-formatter="remoteUrlRequestFn" 
 						   remote-url-data-field="items" 
 						   search-fields="name,description" title-field="name" minlength="1" input-class="find-icon" match-class="highlight" type="text"></div>
 
-						<h4>Productos más buscados</h4>
+						<h5>Productos más buscados</h5>
 
 						<input type="checkbox" name="product1" value="Coca-Cola 1.5lts" class="product-popular"><label for="product1">Coca-Cola 1.5lts <span class="fa fa-plus-circle"></span></label>
 						<input type="checkbox" name="product2" value="Leche La Serenisima 1Lt" class="product-popular"><label for="product2">Leche La Serenisima 1Lt <span class="fa fa-plus-circle"></span></label>
@@ -122,7 +152,7 @@
 					<li><span class="name">Producto 11</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
 					<li><span class="name">Producto 12</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
 				</ul>
-				<a href="" class="button ghost large">Comparar lista</a>
+				<a href="" class="button ghost large">Comparar precios</a>
 			</div>
 			
 		</article>
@@ -133,12 +163,12 @@
 			<article class="col s12 l4">
 				<h3><span>Busc&aacute;</span></h3>
 				<span class="fa fa-search"></span>
-				<p>Cargá tu lista de compras para que nosotros recorramos por vos todos los supermercados online y relevemos todos los precios.</p>
+				<p>Llená tu changuito para que nosotros recorramos por vos todos los supermercados online y relevemos todos los precios.</p>
 			</article>
 			<article class="col s12 l4">
 				<h3><span>Compar&aacute;</span></h3>
 				<span class="fa fa-list"></span>
-				<p>Obtené un informe que compara el precio de tu lista en cada supermercado. Tomamos en cuenta promociones bancarias y costos de envío.</p>
+				<p>Obtené un informe que compara el precio de tu compra en cada supermercado. Tomamos en cuenta promociones bancarias y costos de envío.</p>
 			</article>
 			<article class="col s12 l4">
 				<h3><span>Ahorr&aacute;</span></h3>
