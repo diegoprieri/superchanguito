@@ -42,10 +42,15 @@
 
 						<h4>Agregar producto</h4>
 						
-						<div angucomplete-alt placeholder="Qué producto buscás?" pause="100" selected-object="countrySelected"	remote-url="https://api.github.com/search/repositories" 
+						<div angucomplete-alt placeholder="Qué producto buscás?" pause="100" 
+						   clear-selected="true"
+						   selected-object="productSelected"	
+						   autocomplete="off"
+						   remote-url="http://sccore-svinci.rhcloud.com/autocomplete" 
 						   remote-url-request-formatter="remoteUrlRequestFn" 
-						   remote-url-data-field="items" 
-						   search-fields="name,description" title-field="name" minlength="1" input-class="find-icon" match-class="highlight" type="text"></div>
+						   remote-url-data-field="" 
+						   search-fields="description" title-field="description" minlength="3" 
+						   input-class="find-icon" match-class="highlight" type="text"></div>
 
 						<h5>Productos más buscados</h5>
 
@@ -57,34 +62,15 @@
 			</div>
 			<div class="col s12 m6 list-container">
 				<h3>Mi changuito</h3>
-				<h4 class="column-title"><span class="product-name">Producto</span><span class="product-number">Cantidad</span></h4>
+				<h4 ng-if="productList.length > 0" class="column-title"><span class="product-name">Producto</span><span class="product-number">Cantidad</span></h4>
 				<ul class="shopping-list">
-					<li><span class="name">GASEOSA COCA COLA ZERO BOTELLA 600 CC. </span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Patitas de pollo Granja del Sol con jamon y queso bolsa X 400 GR </span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Hamburguesas Patty x4</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 04</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 05</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 06</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 07</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 08</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 09</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 10</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 11</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 12</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 01</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 02</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 03</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 04</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 05</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 06</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 07</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 08</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 09</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 10</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 11</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
-					<li><span class="name">Producto 12</span><span class="cant">1</span><a href=><span class="fa fa-times"></span></a></li>
+					<li p-id="{{p.id}}" ng-repeat="p in productList">
+						<span class="name">{{p.description}}</span>
+						<span class="cant">{{p.qty}}</span>
+						<a ng-click="deleteProduct(p.id)"><span class="fa fa-times"></span></a>
+					</li>
 				</ul>
-				<a href="" class="button ghost large">Comparar precios</a>
+				<a ng-if="productList.length > 0" href="" class="button ghost large">Comparar precios</a>
 			</div>
 			
 		</article>
