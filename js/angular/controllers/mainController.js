@@ -1,4 +1,4 @@
-scApp.controller('mainController', function($scope, $timeout) {
+scApp.controller('mainController', function($scope, $timeout, $location, $rootScope) {
 
     $scope.productList = [];
     $scope.searchStr = "";
@@ -23,6 +23,11 @@ scApp.controller('mainController', function($scope, $timeout) {
             product["qty"] = 1;
             $scope.productList.push(product); 
       }      
+    };
+
+    $scope.compareList = function() {
+      $rootScope.plist = $scope.productList;
+      $location.path("/results");
     };
 
       $timeout(function(){

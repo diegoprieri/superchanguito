@@ -1,0 +1,34 @@
+<section class="results row wrapper">
+	
+	<article ng-if="markets" class="col s12">
+		<h2>¡Empezá a ahorrar!</h2>
+		<p class="col s12 m8 l6 noMargin">
+			Ahora sabés qué supermercado online ofrece el mejor precio para tu changuito. Es hora de empezar a comprar de forma inteligente y ahorrar.
+		</p>
+		<div class="table col s12 noMargin">
+			<ul class="col s4 m2 noMargin name">
+				<li class="header">
+					<span class="store">Supermercado</span>
+					<span class="product">Producto</span>
+				</li>
+				<li ng-repeat="p in products">{{p.description}}</li>
+			</ul>
+			<ul ng-repeat="m in markets" ng-class="{'saving-list': m.is_the_best}" class="col s4 m2 noMargin price">
+				<li class="header">{{m.description | uppercase}} <span ng-if="m.is_the_best" class="ribbon">Mayor Ahorro</span></li>
+				<li ng-repeat="p in products" ng-class="{'saving-price': p.prices_by_market_id[m.id].is_the_best}">
+					$ {{p.prices_by_market_id[m.id].amount}}
+				</li> 
+				<!-- <li class="saving-price"><span class="offer">Oferta</span> $ 250</li> -->
+			</ul>							
+		</div>
+		<a href="/#fillCart" class="button blue">Llenar changuito</a>
+	</article>
+
+	<article ng-if="markets == undefined" class="col s12">
+		<h2>¡Aún no llenaste tu changuito!</h2>
+		<p>
+			<a href="/#fillCart" class="button blue">Llenar changuito</a>
+		</p>			
+	</article>
+
+</section>

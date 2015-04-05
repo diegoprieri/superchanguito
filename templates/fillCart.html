@@ -1,0 +1,79 @@
+<section id="search-section" class="list main">
+	<div class="wrapper row">
+		
+		<article class="col s12 noMargin search">
+			<div class="col s12 m6">
+				<div class="col s12 noMargin title-container">
+					
+					<article class="col s0 m2 noMargin list-icon ">
+						<img src="img/icon-list.svg" class="svg" alt="Lista de compras">
+					</article>
+					<article class="col s12 m10 ml-m2 noMargin title">
+						<h2>&iexcl;Llená tu changuito, compar&aacute; y ahorrá!</h2>
+						<p class="col s12">No pierdas tiempo buscando el precio más bajo. Llená tu changuito y descubrí qué supermercado online tiene el mejor precio. Empezá a ahorrar yá!</p>
+					</article>
+				</div>
+				<form action="" class="col s12 noMargin">
+					<fieldset>
+
+						<h4>Agregar producto</h4>
+						
+						<div angucomplete-alt placeholder="Qué producto buscás?" pause="100" 
+						   clear-selected="true"
+						   selected-object="productSelected"	
+						   autocomplete="off"
+						   remote-url="http://sccore-svinci.rhcloud.com/autocomplete" 
+						   remote-url-request-formatter="remoteUrlRequestFn" 
+						   remote-url-data-field="" 
+						   search-fields="description" title-field="description" minlength="3" 
+						   input-class="find-icon" match-class="highlight" type="text"></div>
+
+						<h5>Productos más buscados</h5>
+
+						<input type="checkbox" name="product1" value="Coca-Cola 1.5lts" class="product-popular"><label for="product1">Coca-Cola 1.5lts <span class="fa fa-plus-circle"></span></label>
+						<input type="checkbox" name="product2" value="Leche La Serenisima 1Lt" class="product-popular"><label for="product2">Leche La Serenisima 1Lt <span class="fa fa-plus-circle"></span></label>
+						<input type="checkbox" name="product3" value="Hamburguesas Patty x4" class="product-popular"><label for="product3">Hamburguesas Patty x4 <span class="fa fa-plus-circle"></span></label>
+					</fieldset>
+				</form>
+			</div>
+			<div class="col s12 m6 list-container" ng-class="{'empty': productList.length == 0}">
+				<h3>Mi changuito</h3>
+				<h4 ng-if="productList.length > 0" class="column-title"><span class="product-name">Producto</span><span class="product-number">Cantidad</span></h4>
+				<ul class="shopping-list">
+					<li p-id="{{p.id}}" ng-repeat="p in productList">
+						<span class="name">{{p.description}}</span>
+						<span class="cant">{{p.qty}}</span>
+						<a ng-click="deleteProduct(p.id)" href=""><span class="fa fa-times"></span></a>
+					</li>
+				</ul>
+				<a ng-if="productList.length > 0" href="" class="button ghost large" ng-click="compareList()">Comparar precios</a>
+
+				<div class="empty-message">
+					<span class="fa fa-shopping-cart"></span>
+					<p>¡Cargá tu lista para empezar a comparar!</p>
+				</div>
+			</div>
+			
+		</article>
+	</div>
+</section>
+<section class="description">
+	<div class="wrapper row">
+		<h2 class="col s12"><span>¿Cómo funciona?</span></h2>
+		<article class="col s12 l4">
+			<h3><span>Busc&aacute;</span></h3>
+			<span class="fa fa-search"></span>
+			<p>Llená tu changuito para que nosotros recorramos por vos todos los supermercados online y relevemos todos los precios.</p>
+		</article>
+		<article class="col s12 l4">
+			<h3><span>Compar&aacute;</span></h3>
+			<span class="fa fa-list"></span>
+			<p>Obtené un informe que compara el precio de tu compra en cada supermercado. Tomamos en cuenta promociones bancarias y costos de envío.</p>
+		</article>
+		<article class="col s12 l4">
+			<h3><span>Ahorr&aacute;</span></h3>
+			<span class="fa fa-usd"></span>
+			<p>Comenzá a ahorrar en tus compras facilmente y llená tu changuito con menos dinero.</p>
+		</article>
+	</div>
+</section>
