@@ -5,13 +5,13 @@ scApp.controller('resultsController', function($scope, $rootScope, $http) {
     var list = $rootScope.plist;
     var ids = "";
     for (var i = 0; i < list.length; i++) {
-      ids = ids + list[i].id;
+      ids = ids + list[i].id + "=" + list[i].qty;
       if (i < (list.length-1)){
-        ids = ids + ",";
+        ids = ids + "&";
       }
     }
 
-    $http.get('http://sccore-svinci.rhcloud.com/compare?product_ids=' + ids).
+    $http.get('http://sccore-svinci.rhcloud.com/compare?' + ids).
       success(function(data, status, headers, config) {
         console.log(data);
         $scope.markets = data.markets;
