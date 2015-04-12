@@ -13,13 +13,25 @@ scApp.controller('resultsController', function($scope, $rootScope, $http) {
 
     $http.get('http://sccore-svinci.rhcloud.com/compare?' + ids).
       success(function(data, status, headers, config) {
-        console.log(data);
+        
+        localStorage["compare_result_data"] = JSON.stringify(data);
         $scope.markets = data.markets;
         $scope.products = data.products;
+
       }).
       error(function(data, status, headers, config) {
          
     });
+
+  }else {
+
+    var data = JSON.parse(localStorage["compare_result_data"]);
+    if (data){
+
+      $scope.markets = data.markets;
+      $scope.products = data.products;
+
+    }
 
   }
 
