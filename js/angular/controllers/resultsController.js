@@ -1,5 +1,7 @@
 scApp.controller('resultsController', function($scope, $rootScope, $http) {
 
+  $scope.showResult = false;
+
   if ($rootScope.plist){
 
     var list = $rootScope.plist;
@@ -18,8 +20,12 @@ scApp.controller('resultsController', function($scope, $rootScope, $http) {
         $scope.markets = data.markets;
         $scope.products = data.products;
 
+        $scope.showResult = true;
+
       }).
       error(function(data, status, headers, config) {
+
+        $scope.showResult = true;
          
     });
 
@@ -30,6 +36,8 @@ scApp.controller('resultsController', function($scope, $rootScope, $http) {
 
       $scope.markets = data.markets;
       $scope.products = data.products;
+
+      $scope.showResult = true;
 
     }
 

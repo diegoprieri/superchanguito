@@ -1,6 +1,6 @@
 <section class="results row wrapper">
 	
-	<article ng-if="markets" class="col s12">
+	<article ng-show="showResult" ng-if="markets" class="col s12">
 		<h2>¡Empezá a ahorrar!</h2>
 		<p class="col s12 m8 l6 noMargin">
 			Ahora sabés qué supermercado online ofrece el mejor precio para tu changuito. Es hora de empezar a comprar de forma inteligente y ahorrar.
@@ -24,7 +24,7 @@
 		<a href="/#fillCart" class="button blue">Llenar nuevo changuito</a>
 	</article>
 
-	<article ng-if="markets == undefined" class="col s12">
+	<article ng-show="showResult" ng-if="markets == undefined" class="col s12" ng-cloak>
 		<h2>¡Aún no llenaste tu changuito!</h2>
 		<p>
 			<a href="/#fillCart" class="button blue">Llenar changuito</a>
