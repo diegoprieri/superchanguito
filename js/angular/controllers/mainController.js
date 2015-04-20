@@ -1,7 +1,17 @@
-scApp.controller('mainController', function($scope, $timeout, $location, $rootScope) {
+scApp.controller('mainController', function($scope, $timeout, $location, $rootScope, $http) {
 
     $scope.productList = [];
     $scope.searchStr = "";
+    $scope.recomendedProducts = [];
+
+    $http.get('http://sccore-svinci.rhcloud.com/most-wanted').
+      success(function(data, status, headers, config) {
+        
+        $scope.recomendedProducts = data;
+
+      }).
+      error(function(data, status, headers, config) {         
+    });
 
     $scope.remoteUrlRequestFn = function(str) {
       return {q: str, n:10};
@@ -19,10 +29,30 @@ scApp.controller('mainController', function($scope, $timeout, $location, $rootSc
     
     $scope.productSelected = function(selected) {
       if (selected){
-            var product = selected.originalObject;
-            product["qty"] = 1;
-            $scope.productList.push(product); 
+        var product = selected.originalObject;
+        $scope.addProduct(product);
       }      
+    };
+
+    $scope.addProduct = function(p) {
+      var product = $scope.findProduct(p.id);
+      if (product){
+        product["qty"] += 1;
+      }else {
+        product = p;
+        product["qty"] = 1;
+        $scope.productList.push(product);    
+      }  
+    };
+
+    $scope.findProduct = function(pid) {
+      var list = $scope.productList;
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].id == pid){
+          return list[i]; 
+        }
+      }  
+      return null;    
     };
 
     $scope.compareList = function() {

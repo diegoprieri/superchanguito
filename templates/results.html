@@ -11,7 +11,7 @@
 					<span class="store">Supermercado</span>
 					<span class="product">Producto</span>
 				</li>
-				<li ng-repeat="p in products">{{p.description}}</li>
+				<li ng-repeat="p in products">{{p.description}} <span ng-if="p.quantity > 1">({{p.quantity}})</span></li>
 			</ul>
 			<ul ng-repeat="m in markets" ng-class="{'saving-list': m.is_the_best}" class="col s4 m2 noMargin price">
 				<li class="header">{{m.description | uppercase}} <span ng-if="m.is_the_best" class="ribbon">Mayor Ahorro</span></li>
