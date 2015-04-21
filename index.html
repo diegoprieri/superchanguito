@@ -54,7 +54,7 @@
 	<header aria-role="banner">
 		<div class="wrapper row">
 			<h1 class="col s6 logo">
-				<canvas id="temp2" width="112" height="60"></canvas>
+				<img src="img/logo.svg" alt="" class="svg">
 				Superchanguito
 			</h1>
 			<nav class="col s6 social" aria-role="navigation">
@@ -68,7 +68,20 @@
 	
 	<div ng-view></div>
 	
-	<footer></footer>
+	<footer class="row">
+		<form class="col s12 m6 l3">
+			<fieldset>
+				<h2 class="col s12">¡Esperamos tu comentario!</h2>
+				<label class="col s12" for="name">Nombre:</label>
+				<input class="col s12" type="text" id="name" placeholder="ingrese su nombre" required>	
+				<label class="col s12" for="email">Email:</label>
+				<input class="col s12" type="email" id="email" placeholder="ingrese su email" required>
+				<label class="col s12" for="message">Mensaje:</label>
+				<textarea class="col s12" name="message" id="message"></textarea>
+				<input type="submit" value="Enviar" class="button green">	
+			</fieldset>
+		</form>
+	</footer>
 
 	<!-- jQuery -->	
 	<script src="js/libs/jquery-1.11.2.min.js"></script>

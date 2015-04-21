@@ -25,10 +25,10 @@
 		top: 1px;
 	}
 	&.green {
-		background-color: $green-1;
+		background-color: $green-4;
 	}
 	&.green:hover {
-		background-color: transparentize($green-1, 0.3);
+		background-color: transparentize($green-4, 0.3);
 	}
 	&.blue {
 		background-color: $blue-1;

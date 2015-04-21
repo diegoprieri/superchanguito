@@ -47,7 +47,9 @@
 					<li p-id="{{p.id}}" ng-repeat="p in productList">
 						<span class="name">{{p.description}}</span>
 						<span class="cant">{{p.qty}}</span>
-						<a ng-click="deleteProduct(p.id)" href=""><span class="fa fa-times"></span></a>
+						<span class="fa fa-chevron-up"></span>
+						<span class="fa fa-chevron-down"></span>
+						<a ng-click="deleteProduct(p.id)" href="" class="fa fa-times"></a>
 					</li>
 				</ul>
 				<a ng-if="productList.length > 0" href="" class="button ghost large" ng-click="compareList()">Comparar precios</a>
@@ -61,7 +63,7 @@
 		</article>
 	</div>
 </section>
-<section class="description" style="background: #f0f0f0;">
+<section class="description">
 	<div class="wrapper row">
 		<h2 class="col s12" style="margin-bottom: 30px;"><span>¿Cómo funciona?</span></h2>
 		<article class="col s12 l4 box">
@@ -81,9 +83,9 @@
 		</article>
 	</div>
 </section>
-<section>
+<section class="markets">
 	<div class="row">
-		<h2 class="col s12"><span>SuperChanguito recorre estos supermercados online</span></h2>
+		<h2 class="col s12">SuperChanguito recorre estos supermercados online</h2>
 		<ul class="markets-list">
 			<li><img src="/img/super-logos/cotodigital-logo.png" class="market-logo"></li>
 			<li><img src="/img/super-logos/discovirtual-logo.gif" class="market-logo"></li>
