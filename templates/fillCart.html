@@ -47,8 +47,8 @@
 					<li p-id="{{p.id}}" ng-repeat="p in productList">
 						<span class="name">{{p.description}}</span>
 						<span class="cant">{{p.qty}}</span>
-						<span class="fa fa-chevron-up"></span>
-						<span class="fa fa-chevron-down"></span>
+						<span class="fa fa-chevron-up" ng-click="upQty(p.id)"></span>
+						<span class="fa fa-chevron-down" ng-click="downQty(p.id)"></span>
 						<a ng-click="deleteProduct(p.id)" href="" class="fa fa-times"></a>
 					</li>
 				</ul>

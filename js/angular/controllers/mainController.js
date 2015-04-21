@@ -45,6 +45,20 @@ scApp.controller('mainController', function($scope, $timeout, $location, $rootSc
       }  
     };
 
+    $scope.downQty= function(pid) {
+      var product = $scope.findProduct(pid);
+      if (product && product.qty > 1){
+        product["qty"] -= 1;
+      }  
+    };
+
+    $scope.upQty= function(pid) {
+      var product = $scope.findProduct(pid);
+      if (product){
+        product["qty"] += 1;  
+      }      
+    };
+
     $scope.findProduct = function(pid) {
       var list = $scope.productList;
       for (var i = 0; i < list.length; i++) {
