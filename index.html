@@ -57,19 +57,22 @@
 				<img src="img/logo.svg" alt="" class="svg">
 				Superchanguito
 			</h1>
-			<nav class="col s6 social" aria-role="navigation">
-				<ul>
-					<li><a href="" class="fa fa-facebook-square"></a></li>
-					<li><a href="" class="fa fa-twitter-square"></a></li>
-				</ul>
-			</nav>
 		</div>
 	</header>
 	
 	<div ng-view></div>
 	
 	<footer class="row">
-		<form class="col s12 m6 l3">
+		<div class="col s12 l4">
+			<h2>Seguinos en:</h2>
+			<nav class="social" aria-role="navigation">
+				<ul>
+					<li><a href="" ><span class="fa fa-facebook-square"></span> /superchanguito</a></li>
+					<li><a href="" ><span class="fa fa-twitter-square"></span> @superchanguito</a></li>
+				</ul>
+			</nav>
+		</div>
+		<form class="col s12 l4">
 			<fieldset>
 				<h2 class="col s12">¡Esperamos tu comentario!</h2>
 				<label class="col s12" for="name">Nombre:</label>
@@ -81,6 +84,8 @@
 				<input type="submit" value="Enviar" class="button green">	
 			</fieldset>
 		</form>
+		<div class="col s12 l4 twitter-widget">
+		</div>
 	</footer>
 
 	<!-- jQuery -->	
