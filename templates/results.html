@@ -23,9 +23,9 @@
 							<span class="fa fa-usd"></span>
 							<div class="tooltip">Precio mas barato</div>
 						</div>
-						$ {{p.prices_by_market_id[m.id].amount}}
+						$ {{p.prices_by_market_id[m.id].amount | number}}
 					</li>
-					<li class="total">$256</li>
+					<li class="total">{{m.amount | number}}</li>
 					
 				</ul>							
 			</div>
