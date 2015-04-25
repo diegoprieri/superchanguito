@@ -10,57 +10,6 @@
 	<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/font-awesome.min.css">	
 
-	<style>
-		.box{
-			border: 1px solid #ddd;
-			border-radius: 3px;
-			box-shadow: 0px 2px 5px #dfdfdf;
-			background: #fff;
-		}
-
-		section.description h2 span{
-			background: transparent;
-			margin-bottom: 25px;
-		}
-
-		section.description article h3:before{
-			border: none;
-		}
-		section.description article p{
-			border: none;	
-		}
-		section article p{
-			margin-bottom: 5px;
-		}
-
-		section.description article{
-			min-height: 280px;
-		}
-		section.description{
-			padding-bottom: 50px;
-		}
-
-		.market-logo{
-			height: 65px;
-		}
-		.markets-list li{
-			  display: inline-block;
-			  margin-right: 25px;
-			  margin-left: 25px;
-		}
-
-		header .logo a{
-			text-decoration: none;
-			color: #00107C;
-		}
-
-		.us-pic{
-			border: 1px solid #aaa;
-			height: 100px;
-			width: 100px;
-			border-radius: 50px;
-		}
-	</style>
 </head>
 <body>
 	<header aria-role="banner">
@@ -76,31 +25,34 @@
 	
 	<div ng-view></div>
 	
-	<footer class="row">
-		<div class="col s12 l4">
-			<h2>Seguinos en:</h2>
-			<nav class="social" aria-role="navigation">
-				<ul>
-					<li><a href="" ><span class="fa fa-facebook-square"></span> /superchanguito</a></li>
-					<li><a href="" ><span class="fa fa-twitter-square"></span> @superchanguito</a></li>
-				</ul>
-			</nav>
-		</div>
-		<form class="col s12 l4">
-			<fieldset>
-				<h2 class="col s12">¡Esperamos tu comentario!</h2>
-				<label class="col s12" for="name">Nombre:</label>
-				<input class="col s12" type="text" id="name" placeholder="ingrese su nombre" required>	
-				<label class="col s12" for="email">Email:</label>
-				<input class="col s12" type="email" id="email" placeholder="ingrese su email" required>
-				<label class="col s12" for="message">Mensaje:</label>
-				<textarea class="col s12" name="message" id="message"></textarea>
-				<input type="submit" value="Enviar" class="button green">	
-			</fieldset>
-		</form>
-		<div class="col s12 l4 twitter-widget">
-			<a class="twitter-timeline" href="https://twitter.com/SuperChanguito" data-widget-id="590600646707019776">Tweets de @SuperChanguito</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	<footer>
+		<div class="wrapper row">
+			
+			<div class="col s12 l3">
+				<h2>Seguinos en:</h2>
+				<nav class="social" aria-role="navigation">
+					<ul>
+						<li><a href="" ><span class="fa fa-facebook-square"></span> /superchanguito</a></li>
+						<li><a href="" ><span class="fa fa-twitter-square"></span> @superchanguito</a></li>
+					</ul>
+				</nav>
+			</div>
+			<form class="col s12 l5">
+				<fieldset>
+					<h2 class="col s12">¡Esperamos tu comentario!</h2>
+					<label class="col s12" for="name">Nombre:</label>
+					<input class="col s12" type="text" id="name" placeholder="ingrese su nombre" required>	
+					<label class="col s12" for="email">Email:</label>
+					<input class="col s12" type="email" id="email" placeholder="ingrese su email" required>
+					<label class="col s12" for="message">Mensaje:</label>
+					<textarea class="col s12" name="message" id="message"></textarea>
+					<input type="submit" value="Enviar" class="button green">	
+				</fieldset>
+			</form>
+			<div class="col s12 l4 twitter-widget">
+				<a class="twitter-timeline" href="https://twitter.com/SuperChanguito" data-widget-id="590600646707019776">Tweets de @SuperChanguito</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			</div>
 		</div>
 	</footer>
 

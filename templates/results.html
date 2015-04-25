@@ -7,28 +7,32 @@
 			<p class="col s12 m8 l6 noMargin">
 				Ahora sabés qué supermercado online ofrece el mejor precio para tu changuito. Es hora de empezar a comprar de forma inteligente y ahorrar.
 			</p>
-			<div class="table col s12 noMargin">
-				<ul class="col s4 m2 noMargin name">
-					<li class="header">
-						<span class="store">Supermercado</span>
-						<span class="product">Producto</span>
-					</li>
-					<li ng-repeat="p in products">{{p.description}} <span ng-if="p.quantity > 1">({{p.quantity}})</span></li>
-					<li class="total">Total:</li>
-				</ul>
-				<ul ng-repeat="m in markets" ng-class="{'saving-list': m.is_the_best}" class="col s4 m2 noMargin price">
-					<li class="header">{{m.description | uppercase}} <span ng-if="m.is_the_best" class="ribbon">Mayor Ahorro</span></li>
-					<li ng-repeat="p in products" ng-class="{'saving-price': p.prices_by_market_id[m.id].is_the_best}">
-						<div ng-show="p.prices_by_market_id[m.id].is_the_best" class="offer">
-							<span class="fa fa-usd"></span>
-							<div class="tooltip">Precio mas barato</div>
-						</div>
-						$ {{p.prices_by_market_id[m.id].amount | number}}
-					</li>
-					<li class="total">{{m.amount | number}}</li>
-					
-				</ul>							
-			</div>
+			<ul class="table">
+				<li class="first-col">
+					<ul class="noMargin name">
+						<li class="header">
+							<span class="store">Supermercado</span>
+							<span class="product">Producto</span>
+						</li>
+						<li class="product-name" ng-repeat="p in products">{{p.description}} <span ng-if="p.quantity > 1">({{p.quantity}})</span></li>
+						<li class="total">Total:</li>
+					</ul>
+				</li>
+				<li class="market-result">
+					<ul ng-repeat="m in markets" ng-class="{'saving-list': m.is_the_best}" class="price">
+						<li class="header">{{m.description | uppercase}} <span ng-if="m.is_the_best" class="ribbon">Mayor Ahorro</span></li>
+						<li ng-repeat="p in products" ng-class="{'saving-price': p.prices_by_market_id[m.id].is_the_best}">
+							<div ng-show="p.prices_by_market_id[m.id].is_the_best" class="offer">
+								<span class="fa fa-usd"></span>
+								<div class="tooltip">Precio mas barato</div>
+							</div>
+							$ {{p.prices_by_market_id[m.id].amount | number}}
+						</li>
+						<li class="total">$ {{m.amount | number}}</li>
+						
+					</ul>							
+				</li>
+			</ul>
 			<a href="/#fillCart" class="button blue">Llenar nuevo changuito</a>
 		</article>
 
