@@ -18,7 +18,7 @@
 						<li class="total">Total:</li>
 					</ul>
 				</li>
-				<li class="market-result">
+				<li class="market-result markets-{{markets.length}}">
 					<ul ng-repeat="m in markets" ng-class="{'saving-list': m.is_the_best}" class="price">
 						<li class="header">{{m.description | uppercase}} <span ng-if="m.is_the_best" class="ribbon">Mayor Ahorro</span></li>
 						<li ng-repeat="p in products" ng-class="{'saving-price': p.prices_by_market_id[m.id].is_the_best}">
