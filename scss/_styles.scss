@@ -33,7 +33,6 @@ header{
 		margin: 0;
 		font-family: $logo;
 		color: $black;
-		padding-left: 1em;
 		vertical-align: middle;
 		@include transition(all 0.25s linear);
 		a{
@@ -42,7 +41,7 @@ header{
 		}
 		.svg{
 			@include transition(all 0.25s linear);
-			width: auto;
+			width: 60px;
 			height: 0.8em;
 			margin-top: 0.2em;
 			.capa{
@@ -596,6 +595,17 @@ section{
 				position: absolute;
 				top: 50px;
 				right: 15px;
+				@media (max-width: 767px){
+					position: fixed;
+					top: initial;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					@include border-radius(0);
+					height: 45px;
+					line-height: 45px;
+					@include box-shadow(none);
+				}
 			}
 			.table{
 				width: 100%;
@@ -650,6 +660,9 @@ section{
 								}
 							}
 						}
+					}
+					@media (max-width: 767px){
+						display: none;
 					}
 
 				}
@@ -728,6 +741,7 @@ section{
 											visibility: hidden;
 											position: absolute;
 											top: -25px;
+											line-height: 1.2;
 											left: -5px;
 											background-color: rgba(0,0,0,0.8);
 											padding: 0.5em;
@@ -784,9 +798,29 @@ section{
 					  &.markets-#{$i} { 
 					  	ul{
 					  		width: 100% / $i; 
-					  		
+					  		@media (max-width: 767px){
+								width: 100%;
+							}
 					  	}
 					  }
+					}
+					@media (max-width: 767px){
+						width: 100%;
+						ul{
+							li{
+								.description-mobile{
+									text-align: left;
+									@include ellipsis-inline();
+									font-size: 0.85em;
+								}
+								&.saving-price{
+									.description-mobile{
+										padding-left: 20px;
+
+									}
+								}
+							}
+						}
 					}
 				}
 			}

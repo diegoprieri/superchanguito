@@ -26,6 +26,7 @@
 								<span class="fa fa-usd"></span>
 								<div class="tooltip">Precio mas barato</div>
 							</div>
+							<div class="col s9 m0 l0 xl0 description-mobile">{{p.description}} <span ng-if="p.quantity > 1">({{p.quantity}})</div>
 							$ {{p.prices_by_market_id[m.id].amount | number}}
 						</li>
 						<li class="total">$ {{m.amount | number}}</li>
