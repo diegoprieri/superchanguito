@@ -74,4 +74,21 @@
 			background-color: $white;
 		}
 	}
+	&.social{
+		padding-left: 0;
+		&.fb{
+			background-color: $fb-color;
+		}
+		&.tw{
+			background-color: $tw-color;
+		}
+		span{
+			display: inline-block;
+			line-height: 35px;
+			width: 35px;
+			margin-right: 10px;
+			border-right: 1px solid rgba($gray-7, 0.5);
+			text-align: center;
+		}
+	}
 }
