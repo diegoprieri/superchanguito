@@ -10,6 +10,43 @@
 	<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/font-awesome.min.css">	
 
+	<style>
+
+	section.contact-us{
+		background-color: #444;
+		color: #fff;
+	}
+
+	footer {
+		padding: 15px;
+		background-color: #fff;
+		height: auto;
+		color: #999;
+	}
+
+	footer nav.social ul li{
+		padding: 0px;
+		display: inline-block;
+	}
+
+	footer nav.social ul li a{
+		color: #999;
+	}
+
+	footer nav.social ul {
+	font-size: 1.5em;
+	}
+
+	footer nav.social {
+	text-align: right;
+	}
+
+	section.thanks {
+		background-color: #fff;
+	}
+
+	</style>
+
 </head>
 <body>
 	<header aria-role="banner">
@@ -26,15 +63,19 @@
 	<div ng-view></div>
 	
 	<footer>
-		<div class="wrapper row">			
-			<div class="col s12 l3">
-				<span>Copyright © 2015, Superchanguito</span>
+		<div class="row">
+			<div class="col l4">
+				Copyright © 2015, Superchanguito
+			</div>
+			<div class="col l8">
+
 				<nav class="social" aria-role="navigation">
 					<ul>
 						<li><a href="" ><span class="fa fa-facebook-square"></span> /superchanguito</a></li>
 						<li><a href="" ><span class="fa fa-twitter-square"></span> @superchanguito</a></li>
 					</ul>
 				</nav>
+
 			</div>
 		</div>
 	</footer>
