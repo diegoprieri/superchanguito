@@ -34,17 +34,7 @@
 					</ul>							
 				</li>
 			</ul>
-			<a href="/#fillCart" class="button blue">Llenar nuevo changuito</a>			
-		</article>
-
-		<article ng-show="showResult" ng-if="markets == undefined" class="col s12">
-			<h2>¡Aún no llenaste tu changuito!</h2>
-			<p>
-				<a href="/#fillCart" class="button blue">Llenar changuito</a>
-			</p>			
-		</article>
-
-		<article ng-show="!showResult" class="col s12">
+			<a href="/#fillCart" class="button blue">Llenar nuevo changuito</a>
 			<div class="spinner">
 			  <div class="spinner-container container1">
 			    <div class="circle1"></div>
@@ -65,18 +55,27 @@
 			    <div class="circle4"></div>
 			  </div>
 			</div>
-		</article>	
+		</article>
 
-	</div>	
+		<article ng-show="showResult" ng-if="markets == undefined" class="col s12">
+			<h2>¡Aún no llenaste tu changuito!</h2>
+			<p>
+				<a href="/#fillCart" class="button blue">Llenar changuito</a>
+			</p>			
+		</article>
+	</div>
+	
 
 </section>
-
-<section class="thanks" ng-show="showResult">
+<section class="thanks">
 	<div class="wrapper row">
-		<h2 class="col s12">¡Gracias por usar <span class="logo">Superchanguito</span>!</h2>
+		<h2 class="col s12">¡Gracias por usar <span class="logo">Superchanguito</span></h2>
 		<article class="col s12">
-			<a href="" class="fa fa-facebook-square"> Compartir en Facebook</a>
-			<a href="" class="fa fa-twitter-square"> Compartir en Twitter</a>			
-		</article>		
+			<h3>Compartir:</h3>
+			<a href=""><span class="fa fa-facebook"></span>Compartir en Facebook</a>
+			<a href=""><span class="fa fa-twitter"></span>Compartir en Twiter</a>
+			
+		</article>
+		
 	</div>
 </section>
