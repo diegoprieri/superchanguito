@@ -3,6 +3,7 @@ scApp.controller('mainController', function($scope, $timeout, $location, $rootSc
     $scope.productList = [];
     $scope.searchStr = "";
     $scope.recomendedProducts = [];
+    $scope.messageSent = false;
 
     $http.get('http://sccore-svinci.rhcloud.com/most-wanted').
       success(function(data, status, headers, config) {
@@ -73,6 +74,20 @@ scApp.controller('mainController', function($scope, $timeout, $location, $rootSc
       $rootScope.plist = $scope.productList;
       $location.path("/results");
     };
+
+    $scope.sendMessage = function(name, mail, message) {
+      
+      $http.post('http://sccore-svinci.rhcloud.com/message/add', {name:name, mail:mail, message:message}).
+      success(function(data, status, headers, config) {
+        $scope.messageSent = true;
+      }).
+        error(function(data, status, headers, config) {         
+      });
+
+    };
+
+
+
 
       $timeout(function(){
             $(".find-icon").after("<span class='fa fa-search'></span>");            

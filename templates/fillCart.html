@@ -128,15 +128,16 @@
 <section class="contact-us">
 	<div class="wrapper row">
 		<form class="col s12 l4 push-l4 m6 push-m3">
-			<fieldset>
+			<h2 ng-if="messageSent" class="col s12">¡Gracias por tu comentario!</h2>
+			<fieldset ng-if="!messageSent">
 				<h2 class="col s12">¡Esperamos tu comentario!</h2>
 				<label class="col s12" for="name">Nombre</label>
-				<input class="col s12" type="text" id="name" placeholder="Ingresá tu nombre" required>	
+				<input class="col s12" type="text" ng-model="name" id="name" placeholder="Ingresá tu nombre" required>	
 				<label class="col s12" for="email">Email</label>
-				<input class="col s12" type="email" id="email" placeholder="Ingresá tu email" required>
+				<input class="col s12" type="email" ng-model="email" id="email" placeholder="Ingresá tu email" required>
 				<label class="col s12" for="message">Mensaje</label>
-				<textarea class="col s12" name="message" id="message" placeholder="Escribí tu supercomentario..."></textarea>
-				<input type="submit" value="Enviar" class="button green">	
+				<textarea class="col s12" name="message" ng-model="message" id="message" placeholder="Escribí tu supercomentario..."></textarea>
+				<input type="button" ng-click="sendMessage(name,mail,message)" value="Enviar" class="button green">	
 			</fieldset>
 		</form>
 	</div>
