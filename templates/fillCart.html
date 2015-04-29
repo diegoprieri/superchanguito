@@ -32,7 +32,7 @@
 
 						<in>
 
-						<label ng-click="addProduct(p)" ng-repeat="p in recomendedProducts" for="product1">
+						<label ng-if="$index < 5" ng-click="addRecomendedProduct(p)" ng-repeat="p in recomendedProducts" for="product1">
 							{{p.description}}
 							<span class="fa fa-plus-circle"></span>
 						</label>

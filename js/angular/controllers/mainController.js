@@ -5,7 +5,7 @@ scApp.controller('mainController', function($scope, $timeout, $location, $rootSc
     $scope.recomendedProducts = [];
     $scope.messageSent = false;
 
-    $http.get('http://sccore-svinci.rhcloud.com/most-wanted').
+    $http.get('http://sccore-svinci.rhcloud.com/most-wanted?n=15').
       success(function(data, status, headers, config) {
         
         $scope.recomendedProducts = data;
@@ -20,6 +20,16 @@ scApp.controller('mainController', function($scope, $timeout, $location, $rootSc
 
     $scope.deleteProduct = function(pid){
       var list = $scope.productList;
+      for (var i = 0; i < list.length; i++) {
+            if (list[i].id == pid){
+                  list.splice(i,1);
+                  break;
+            }
+      }
+    };
+
+    $scope.deleteRecomendedProduct = function(pid){
+      var list = $scope.recomendedProducts;
       for (var i = 0; i < list.length; i++) {
             if (list[i].id == pid){
                   list.splice(i,1);
@@ -44,6 +54,11 @@ scApp.controller('mainController', function($scope, $timeout, $location, $rootSc
         product["qty"] = 1;
         $scope.productList.push(product);    
       }  
+    };
+
+    $scope.addRecomendedProduct = function(p) {      
+      $scope.addProduct(p);
+      $scope.deleteRecomendedProduct(p.id);
     };
 
     $scope.downQty= function(pid) {
