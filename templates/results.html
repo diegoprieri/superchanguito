@@ -24,7 +24,7 @@
 							<span class="store">Supermercado</span>
 							<span class="product">Producto</span>
 						</li>
-						<li class="product-name" ng-repeat="p in products">{{p.description}} <span ng-if="p.quantity > 1">({{p.quantity}})</span></li>
+						<li class="product-name" title="{{p.description}}" ng-repeat="p in products">{{p.description}} <span ng-if="p.quantity > 1">({{p.quantity}})</span></li>
 						<li class="total">Total:</li>
 					</ul>
 				</li>
