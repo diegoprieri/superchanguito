@@ -90,6 +90,12 @@ scApp.controller('mainController', function($scope, $timeout, $location, $rootSc
       $location.path("/results");
     };
 
+    $scope.collapseList = function() {
+      $('.list-container').toggleClass('collapsed');
+      console.log(0)
+    
+    }
+
     $scope.sendMessage = function(name, mail, message) {
       
       $http.post('http://sccore-svinci.rhcloud.com/message/add', {name:name, mail:mail, message:message}).

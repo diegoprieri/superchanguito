@@ -103,7 +103,6 @@ section{
 	padding: 2em 0;
 	color: $gray-3;
 	position: relative;
-	z-index: 10;
 	article{
 		h2{
 			text-align: center;
@@ -347,7 +346,6 @@ section{
 					background-color: transparentize($blue-4, .1);
 					@include clearfix();
 					font-size: 1rem;
-					border: 1px solid $blue-2;
 					span{
 						display: block;
 						&.product-name{
@@ -475,6 +473,87 @@ section{
 						}	
 					}
 
+				}
+				@media (max-width: 767px){
+					margin: 0;
+					position: fixed;
+					bottom: 0;
+					top: 0;
+					right: 0;
+					left: 0;
+					z-index: 100;
+					width: 100%;
+					padding: 0.2em;
+					@include transition(all 0.25s linear);
+					*{
+						@include transition(all 0.25s linear);
+					}
+					h3{
+						padding-left: 2rem;
+						height: 1.2em;
+						line-height: 1.2em;
+					}
+					.list-summary{
+						padding: 0 0.5em 0.5em 2rem;
+						.fa{
+							font-size: 2em;
+							float: left;
+						}
+						p{
+							float: left;
+							width: 80%;
+							margin: 0 0 0 1em;
+							line-height: 1.8;
+						}
+					}
+					&.empty{
+						.empty-message{
+							padding-top: 0;
+							
+						}
+					}
+					&.collapsed{
+						top: initial;
+						.column-title, .shopping-list{
+							display: none;
+						}
+						.button{
+							position: absolute;
+							top: -0.5em;
+							right: 0.5em;
+							width: auto;
+							span{
+								display: none;
+							}
+						}
+
+						&.empty{
+
+							.empty-message{
+								padding-left: 2rem;
+								.fa{
+									font-size: 2em;
+									float: left;
+								}
+								p{
+									float: left;
+									width: 80%;
+									margin: 0 0 0 1em;
+								}
+							}
+						}
+						&:before{
+							@include rotate(180deg);
+						}
+					}
+					&:before{
+						content:"\f13a";
+						font-family: FontAwesome;
+						font-size: 2em;
+						position: absolute;
+						left: 0.2em;
+						top: 0.2em;
+					}
 				}
 			}
 		}

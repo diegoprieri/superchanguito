@@ -67,5 +67,6 @@ $(document).ready(function(){
 		$('input.number').val(cant)	
 		return false;
 	})
+
 })
 

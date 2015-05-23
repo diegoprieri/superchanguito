@@ -40,8 +40,12 @@
 					</fieldset>
 				</form>
 			</div>
-			<div class="col s12 m6 list-container" ng-class="{'empty': productList.length == 0}">
+			<div class="col s12 m6 list-container collapsed" ng-class="{'empty': productList.length == 0}" ng-click="collapseList()">
 				<h3>Mi changuito</h3>
+				<div ng-if="productList.length > 0" class="col s12 m0 l0 xl0 list-summary">
+					<span class="fa fa-shopping-cart"></span>
+					<p>{{productList.length}} Productos</p>
+				</div>
 				<h4 ng-if="productList.length > 0" class="column-title"><span class="product-name">Producto</span><span class="product-number">Cantidad</span></h4>
 				<ul class="shopping-list">
 					<li p-id="{{p.id}}" ng-repeat="p in productList">
@@ -52,7 +56,7 @@
 						<a ng-click="deleteProduct(p.id)" href="" class="fa fa-times"></a>
 					</li>
 				</ul>
-				<a ng-if="productList.length > 0" href="" class="button gray large" ng-click="compareList()">Comparar precios</a>
+				<a ng-if="productList.length > 0" href="" class="button gray large" ng-click="compareList()">Comparar <span>precios</span></a>
 
 				<div class="empty-message">
 					<span class="fa fa-shopping-cart"></span>
