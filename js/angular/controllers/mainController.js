@@ -15,7 +15,7 @@ scApp.controller('mainController', function($scope, $timeout, $location, $rootSc
     });
 
     $scope.remoteUrlRequestFn = function(str) {
-      return {q: str, n:10};
+      return {q: str, n:6};
     };
 
     $scope.deleteProduct = function(pid){

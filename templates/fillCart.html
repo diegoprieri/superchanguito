@@ -30,9 +30,9 @@
 
 						<h5 class="s0">Productos más buscados</h5>
 
-						<in>
+						<span ng-repeat="p in recomendedProducts"></span>	
 
-						<label ng-if="$index < 5" ng-click="addRecomendedProduct(p)" ng-repeat="p in recomendedProducts" for="product1">
+						<label ng-repeat="p in recomendedProducts" ng-if="$index < 3" ng-click="addRecomendedProduct(p)">
 							{{p.description}}
 							<span class="fa fa-plus-circle"></span>
 						</label>
@@ -134,7 +134,7 @@
 		<form class="col s12 l4 push-l4 m6 push-m3">
 			<h2 ng-if="messageSent" class="col s12">¡Gracias por tu comentario!</h2>
 			<fieldset ng-if="!messageSent">
-				<h2 class="col s12">¡Esperamos tu comentario!</h2>
+				<h3 class="col s12">¡Esperamos tu comentario!</h3>
 				<label class="col s12" for="name">Nombre</label>
 				<input class="col s12" type="text" ng-model="name" id="name" placeholder="Ingresá tu nombre" required>	
 				<label class="col s12" for="email">Email</label>
