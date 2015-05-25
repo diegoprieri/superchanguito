@@ -10,6 +10,15 @@ body{
 			
 	}
 }
+html, body{
+	height: 100%;
+}
+.main-container{
+	min-height: 100%;
+	padding-bottom: 3em;
+}
+
+
 
 *{
 	@include box-sizing(border-box);
@@ -475,6 +484,7 @@ section{
 
 				}
 				@media (max-width: 767px){
+					background-color: $blue-4;
 					margin: 0;
 					position: fixed;
 					bottom: 0;
@@ -681,15 +691,8 @@ section{
 				top: 50px;
 				right: 15px;
 				@media (max-width: 767px){
-					position: fixed;
-					top: initial;
-					bottom: 0;
-					left: 0;
-					right: 0;
-					@include border-radius(0);
-					height: 45px;
-					line-height: 45px;
-					@include box-shadow(none);
+					position: static;
+					font-size: 1em;
 				}
 			}
 			.table{
@@ -718,6 +721,14 @@ section{
 							}
 							&.product-name{
 								@include ellipsis-inline();
+								&:hover{
+									z-index: 2;
+									width: auto;
+									min-width: 100%;
+									background-color: #003fa3;
+									overflow: initial;
+									display: inline-block;
+								}
 							}
 							
 						}
@@ -944,6 +955,8 @@ footer{
 	background-color: $gray-9;
 	color: $gray-2;
 	line-height: 3em;
+	height: 4em;
+	margin-top: -3em;
 	clear: both;
 	nav{
 		&.social{
@@ -962,12 +975,17 @@ footer{
 							text-decoration: none;
 						}
 						span{
-							background-color: $white;
 							@include border-radius(5px);
 							height: 21px;
+							@media (max-width: 767px){
+								height: 30px;
+							}
 							&:before{
 								position: relative;
 								top: -2px;
+							}
+							&.fa{
+								background-color: $white;
 							} 						
 							&.fa-facebook-square{
 								color: $fb-color;
@@ -983,6 +1001,11 @@ footer{
 				}
 			}
 			
+		}
+	}
+	&.fill-view{
+		@media (max-width: 767px){
+			margin-bottom: 5em;
 		}
 	}
 }
@@ -1005,17 +1028,16 @@ form{
 		}
 		input{
 			height: 2.5em;
-			&[type=button]{
-				float: right;
-				border: 0;
-				line-height: inherit;
-			}
-			
 		}
 		textarea{
 			height: 6em;
 			margin-bottom: 1em;
 		}
+		.button{
+			float: right;
+			margin-right: 0.5em;
+		}
+		
 	}
 }
 .spinner {
