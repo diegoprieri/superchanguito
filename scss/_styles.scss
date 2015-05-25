@@ -9,6 +9,14 @@ body{
 		font-size: 13px;
 			
 	}
+	&.fill-view{
+		footer{
+			
+			@media (max-width: 767px){
+				margin-bottom: 5em;
+			}
+		}
+	}
 }
 html, body{
 	height: 100%;
@@ -1003,11 +1011,7 @@ footer{
 			
 		}
 	}
-	&.fill-view{
-		@media (max-width: 767px){
-			margin-bottom: 5em;
-		}
-	}
+
 }
 form{
 	fieldset{
