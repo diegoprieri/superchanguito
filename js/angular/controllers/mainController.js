@@ -1,5 +1,7 @@
 scApp.controller('mainController', function($scope, $timeout, $location, $rootScope, $http) {
 
+    $rootScope.pageClass = "fill-view";
+
     $scope.productList = [];
     $scope.searchStr = "";
     $scope.recomendedProducts = [];

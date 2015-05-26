@@ -1,5 +1,7 @@
 scApp.controller('resultsController', function($scope, $rootScope, $http) {
 
+  $rootScope.pageClass = "results-view";
+
   $scope.showResult = false;
 
   if ($rootScope.plist){
